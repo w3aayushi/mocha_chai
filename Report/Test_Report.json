@@ -1,0 +1,317 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 6,
+    "passes": 5,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-01-24T06:50:17.385Z",
+    "end": "2024-01-24T06:50:18.023Z",
+    "duration": 638,
+    "testsRegistered": 6,
+    "passPercent": 83.33333333333334,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2527ab11-2857-4cf4-b6f8-82d1a3693d0b",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8ae6cfb5-d50e-49e4-a5d2-eaa291ce598b",
+          "title": "Suite 1",
+          "fullFile": "/home/aayushi/PROJECTS/Unit-Test/test/appTest.spec.js",
+          "file": "/test/appTest.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "add(2,3) should return 5",
+              "fullTitle": "Suite 1 add(2,3) should return 5",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "expect(add(2,3)).to.be.equal(5);",
+              "err": {},
+              "uuid": "bf35dbcc-0ec5-46ee-b973-c272d1fef789",
+              "parentUUID": "8ae6cfb5-d50e-49e4-a5d2-eaa291ce598b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bf35dbcc-0ec5-46ee-b973-c272d1fef789"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "40e4b3e1-4d52-4b82-986b-a9c0ed2672e8",
+          "title": "async test suite",
+          "fullFile": "/home/aayushi/PROJECTS/Unit-Test/test/async.spec.js",
+          "file": "/test/async.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "promised based way",
+              "fullTitle": "async test suite promised based way",
+              "timedOut": true,
+              "duration": 105,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "this.timeout(100)\nconsole.log('Retry attempt-', count);\ncount++ ;\nthis.retries(2)\nreturn axios.get('https://reqres.in/api/users/2').then(res =>{\n    expect(res.data.data.email).to.be.equal('janet.weaver@reqres.in')\n})",
+              "err": {
+                "message": "Error: Timeout of 100ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (/home/aayushi/PROJECTS/Unit-Test/test/async.spec.js)",
+                "estack": "Error: Timeout of 100ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (/home/aayushi/PROJECTS/Unit-Test/test/async.spec.js)\n    at listOnTimeout (node:internal/timers:569:17)\n    at process.processTimers (node:internal/timers:512:7)",
+                "diff": null
+              },
+              "uuid": "61bc3fd5-f6c2-4927-a364-4007289f1112",
+              "parentUUID": "40e4b3e1-4d52-4b82-986b-a9c0ed2672e8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "done based way",
+              "fullTitle": "async test suite done based way",
+              "timedOut": false,
+              "duration": 37,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "axios.get('https://reqres.in/api/users/2').then(res =>{\n    expect(res.data.data.email).to.be.equal('janet.weaver@reqres.in')\n    done()\n}).catch(err =>{\n    done(err)\n})",
+              "err": {},
+              "uuid": "d72ed8a4-e017-41a5-af7d-9d1de6961d55",
+              "parentUUID": "40e4b3e1-4d52-4b82-986b-a9c0ed2672e8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "async await based way",
+              "fullTitle": "async test suite async await based way",
+              "timedOut": false,
+              "duration": 222,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const res = await axios.get('https://reqres.in/api/users/2')\nexpect(res.data.data.email).to.be.equal('janet.weaver@reqres.in')",
+              "err": {},
+              "uuid": "11b8c2e4-be12-4526-99c8-e52bb36f6c71",
+              "parentUUID": "40e4b3e1-4d52-4b82-986b-a9c0ed2672e8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d72ed8a4-e017-41a5-af7d-9d1de6961d55",
+            "11b8c2e4-be12-4526-99c8-e52bb36f6c71"
+          ],
+          "failures": [
+            "61bc3fd5-f6c2-4927-a364-4007289f1112"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 364,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "e2a9bfe5-f791-4f8c-a739-13e6d5c331dd",
+          "title": "Suite 1",
+          "fullFile": "/home/aayushi/PROJECTS/Unit-Test/test/hooks.spec.js",
+          "file": "/test/hooks.spec.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Suite 1\"",
+              "fullTitle": "Suite 1 \"before all\" hook in \"Suite 1\"",
+              "timedOut": false,
+              "duration": 2,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "console.log('before')",
+              "err": {},
+              "uuid": "0efa0b9f-71f5-48f9-85a7-f0f6890d3295",
+              "parentUUID": "e2a9bfe5-f791-4f8c-a739-13e6d5c331dd",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"before each\" hook in \"Suite 1\"",
+              "fullTitle": "Suite 1 \"before each\" hook in \"Suite 1\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "console.log('beforeEach')",
+              "err": {},
+              "uuid": "a6b8bc34-43e0-43b6-ba26-99e0d24dc0fb",
+              "parentUUID": "e2a9bfe5-f791-4f8c-a739-13e6d5c331dd",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"Suite 1\"",
+              "fullTitle": "Suite 1 \"after all\" hook in \"Suite 1\"",
+              "timedOut": false,
+              "duration": 1,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "console.log('after')",
+              "err": {},
+              "uuid": "c7897828-3164-43a0-9e90-74ab4bc2854a",
+              "parentUUID": "e2a9bfe5-f791-4f8c-a739-13e6d5c331dd",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"after each\" hook in \"Suite 1\"",
+              "fullTitle": "Suite 1 \"after each\" hook in \"Suite 1\"",
+              "timedOut": false,
+              "duration": 1,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "console.log('afterEach')",
+              "err": {},
+              "uuid": "148440ad-2e97-4422-84ab-29dab4d683be",
+              "parentUUID": "e2a9bfe5-f791-4f8c-a739-13e6d5c331dd",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "add(2,3) should return 5",
+              "fullTitle": "Suite 1 add(2,3) should return 5",
+              "timedOut": false,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "console.log('it1')",
+              "err": {},
+              "uuid": "8aa5fea4-4ba5-454a-a166-0b0a321a1ea6",
+              "parentUUID": "e2a9bfe5-f791-4f8c-a739-13e6d5c331dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "add(3,3) should return 6",
+              "fullTitle": "Suite 1 add(3,3) should return 6",
+              "timedOut": false,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "console.log('it2')",
+              "err": {},
+              "uuid": "d3464700-2da9-495e-8604-ddaa7f3d9630",
+              "parentUUID": "e2a9bfe5-f791-4f8c-a739-13e6d5c331dd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8aa5fea4-4ba5-454a-a166-0b0a321a1ea6",
+            "d3464700-2da9-495e-8604-ddaa7f3d9630"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "Test_Report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "Report",
+        "reportFilename": "Test_Report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
