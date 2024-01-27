@@ -4,7 +4,7 @@
   "description": "unit test practise",
   "main": "app.js",
   "scripts": {
-    "test": "mocha 'test/assert_expect.spec.js' "
+    "test": "mocha 'test/calc.spec.js' "
   },
   "author": "aayushi",
   "license": "ISC",
@@ -16,6 +16,8 @@
     "axios": "^1.6.5",
     "body-parser": "^1.20.2",
     "express": "^4.18.2",
-    "mochawesome": "^7.1.3"
+    "mochawesome": "^7.1.3",
+    "sinon": "^17.0.1",
+    "sinon-chai": "^3.7.0"
   }
 }
